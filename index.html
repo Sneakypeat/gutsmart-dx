@@ -1,117 +1,448 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Join the waitlist for GutSmart DX, a next-gen non-invasive gut health diagnostic tool." />
-  <title>GutSmart DX - Join the Waitlist</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: #f9f9f9;
-      color: #111;
-      line-height: 1.6;
-    }
-    header {
-      background: #0f4c81;
-      color: white;
-      padding: 3rem 1rem;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin: 0 0 1rem;
-    }
-    header p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    .cta-button {
-      margin-top: 1.5rem;
-      padding: 1rem 2rem;
-      background: #4dd0e1;
-      color: #000;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-      display: inline-block;
-    }
-    section {
-      padding: 3rem 1rem;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    .feature {
-      flex: 1 1 250px;
-      background: white;
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-      color: #555;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Lab Name] - Microbiome Diagnostics</title>
+    <style>
+        /* Basic Reset & Defaults */
+        body, h1, h2, h3, p, ul, li, figure, figcaption, blockquote, dl, dd {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid #eee;
+        }
+        section:last-child {
+            border-bottom: none;
+        }
+        h1, h2, h3 {
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        h1 { font-size: 2.5em; text-align: center; }
+        h2 { font-size: 2em; text-align: center; }
+        h3 { font-size: 1.5em; }
+        p { margin-bottom: 15px; }
+        ul { list-style: disc; margin-left: 20px; margin-bottom: 15px; }
+        a.button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        a.button:hover {
+            background-color: #2980b9;
+        }
+        a.button-secondary {
+            background-color: transparent;
+            color: #3498db;
+            border: 2px solid #3498db;
+        }
+        a.button-secondary:hover {
+            background-color: #3498db;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background-color: #eaf2f8; /* Light blueish grey */
+            text-align: center;
+            padding: 80px 20px;
+        }
+        .hero-section h1 { color: #1a5276; }
+        .hero-section .sub-headline { font-size: 1.2em; color: #566573; max-width: 700px; margin: 0 auto 30px auto; }
+        .hero-section .cta-buttons a { margin: 0 10px; }
+        .hero-visual {
+            width: 100%;
+            max-width: 600px; /* Adjust as needed */
+            height: 300px; /* Adjust as needed */
+            background-color: #ccc; /* Placeholder for image/video */
+            margin: 40px auto 0 auto;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            font-style: italic;
+        }
+
+        /* How It Works Section */
+        .steps-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .step-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            flex-basis: calc(25% - 20px); /* Adjust for 4 items, consider responsiveness */
+            min-width: 200px; /* Ensure items don't get too small */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .step-item .icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            color: #3498db;
+        }
+
+        /* Benefits Section */
+        .benefits-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .benefit-item {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            flex-basis: calc(33.333% - 30px); /* For 3 items per row */
+            min-width: 280px;
+            text-align: center;
+        }
+        .benefit-item .icon {
+            font-size: 2em;
+            color: #27ae60; /* Green for benefits */
+            margin-bottom: 10px;
+        }
+
+        /* Tests Section */
+        .tests-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .test-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 25px;
+            flex-basis: calc(48% - 30px); /* For 2 cards per row */
+            min-width: 300px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .test-card .price {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #e67e22; /* Orange for price */
+            margin: 15px 0;
+        }
+
+        /* Social Proof Section */
+        .testimonials-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .testimonial-item {
+            background-color: #f1f1f1;
+            border-left: 5px solid #3498db;
+            padding: 20px;
+            border-radius: 5px;
+            flex-basis: calc(33.333% - 20px);
+            min-width: 280px;
+        }
+        .testimonial-item blockquote {
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        .testimonial-item cite {
+            font-weight: bold;
+            display: block;
+            text-align: right;
+        }
+        .logos-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .logos-container img {
+            height: 50px; /* Adjust as needed */
+            margin: 0 15px;
+            opacity: 0.7;
+        }
+
+        /* Final CTA & Newsletter */
+        .final-cta-section, .newsletter-section {
+            text-align: center;
+            background-color: #ecf0f1;
+        }
+        .newsletter-section form {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .newsletter-section input[type="email"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 250px;
+        }
+        .newsletter-section button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .newsletter-section button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 30px 0;
+        }
+        footer p { margin-bottom: 10px; font-size: 0.9em; }
+        footer a { color: #bdc3c7; text-decoration: none; margin: 0 10px; }
+        footer a:hover { color: #fff; }
+        .social-links a { font-size: 1.5em; }
+
+        /* Responsive Adjustments (very basic) */
+        @media (max-width: 768px) {
+            .steps-container .step-item,
+            .benefits-grid .benefit-item,
+            .tests-container .test-card,
+            .testimonials-container .testimonial-item {
+                flex-basis: calc(100% - 20px); /* Full width on smaller screens */
+            }
+            .hero-section h1 { font-size: 2em; }
+            .newsletter-section form { flex-direction: column; align-items: center; }
+            .newsletter-section input[type="email"] { width: 80%; margin-bottom: 10px; }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>GutSmart DX</h1>
-    <p>Smarter diagnostics for your gut health. Join our waitlist to be the first to access our non-invasive microbiome testing platform.</p>
-    <a class="cta-button" href="https://forms.gle/asQ6pVLnQXRE6jz2A" target="_blank">Join the Waitlist</a>
-  </header>
 
-  <section>
-    <h2>Why GutSmart DX?</h2>
-    <div class="features">
-      <div class="feature">
-        <h3>⚡ Fast & Easy</h3>
-        <p>No clinic visits. Just mail in your sample and get results quickly.</p>
-      </div>
-      <div class="feature">
-        <h3>🔬 Personalized Insights</h3>
-        <p>Get microbiome-based recommendations tailored to your health.</p>
-      </div>
-      <div class="feature">
-        <h3>🔒 Privacy First</h3>
-        <p>Your data stays secure, always. Clinician-grade confidentiality.</p>
-      </div>
-      <div class="feature">
-        <h3>🧠 Backed by Science</h3>
-        <p>Developed in collaboration with microbiome researchers and MDs.</p>
-      </div>
-    </div>
-  </section>
+    <!-- 1. Hero Section -->
+    <header class="hero-section">
+        <div class="container">
+            <h1>Unlock Your Unique Health Blueprint: Discover the Power of Your Microbiome.</h1>
+            <p class="sub-headline">Our cutting-edge, non-invasive tests analyze your unique gut microbiome, providing actionable insights to optimize your digestion, immunity, energy, and overall well-being.</p>
+            <div class="cta-buttons">
+                <a href="#tests" class="button">Order Your Test Kit Now</a>
+                <a href="#how-it-works" class="button button-secondary">Learn How It Works</a>
+            </div>
+            <div class="hero-visual">
+                [Visual: Abstract Microbes / Healthy Person / Clean Lab]
+            </div>
+        </div>
+    </header>
 
-  <section>
-    <h2>How It Works</h2>
-    <ol>
-      <li>Sign up for early access</li>
-      <li>Receive updates and get selected for testing</li>
-      <li>Send in your sample</li>
-      <li>Access your personalized gut health report</li>
-    </ol>
-  </section>
+    <!-- 2. Problem / Agitation Section -->
+    <section class="problem-section">
+        <div class="container">
+            <h2>Feeling Unsure About Your Health?</h2>
+            <ul>
+                <li>Struggling with persistent digestive issues (bloating, discomfort, irregularity)?</li>
+                <li>Dealing with unexplained fatigue, mood swings, or skin problems?</li>
+                <li>Frustrated by generic health advice that doesn't work for <em>you</em>?</li>
+                <li>Wanting to move beyond guesswork and understand the root cause of your health concerns?</li>
+            </ul>
+            <p style="text-align: center; font-weight: bold;">It's time for a personalized approach. Your microbiome holds the key.</p>
+        </div>
+    </section>
 
-  <section>
-    <h2>Still curious?</h2>
-    <p>Fill out our brief survey and help us shape the future of GutSmart DX.</p>
-    <a class="cta-button" href="https://forms.gle/asQ6pVLnQXRE6jz2A" target="_blank">Take the Survey</a>
-  </section>
+    <!-- 3. Solution Section -->
+    <section class="solution-section">
+        <div class="container">
+            <h2>Your Microbiome: The Epicenter of Your Health</h2>
+            <p>Your gut is home to trillions of microorganisms – your microbiome – that play a crucial role in nearly every aspect of your health, from nutrient absorption and immune function to mental clarity and disease prevention.</p>
+            <p>At <strong>[Lab Name]</strong>, we use state-of-the-art sequencing technology to decode your unique microbial ecosystem. Our comprehensive reports translate complex data into clear, actionable insights and personalized recommendations, empowering you to take control of your health.</p>
+        </div>
+    </section>
 
-  <footer>
-    &copy; 2025 GutSmart DX. All rights reserved.
-  </footer>
+    <!-- 4. How It Works -->
+    <section id="how-it-works" class="how-it-works-section">
+        <div class="container">
+            <h2>Simple Steps to Unlocking Your Microbial Health</h2>
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="icon">[ICON: Cart]</div>
+                    <h3>1. Order Your Kit</h3>
+                    <p>Choose your test and order online. We'll ship a simple, at-home collection kit directly to your door.</p>
+                </div>
+                <div class="step-item">
+                    <div class="icon">[ICON: Test Tube]</div>
+                    <h3>2. Collect Your Sample</h3>
+                    <p>Follow the easy, non-invasive instructions to collect your sample in the privacy of your home.</p>
+                </div>
+                <div class="step-item">
+                    <div class="icon">[ICON: Mailbox]</div>
+                    <h3>3. Mail It Back</h3>
+                    <p>Use the prepaid return mailer to send your sample to our certified lab.</p>
+                </div>
+                <div class="step-item">
+                    <div class="icon">[ICON: Report]</div>
+                    <h3>4. Get Your Results</h3>
+                    <p>Within [X] weeks, receive a detailed report via our secure online portal, packed with personalized insights.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2>Discover What Your Microbiome Can Reveal</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="icon">[ICON: Target]</div>
+                    <h3>Personalized Insights</h3>
+                    <p>Go beyond generic advice. Understand your unique microbial balance and its impact on <em>your</em> specific health.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="icon">[ICON: Checklist]</div>
+                    <h3>Actionable Recommendations</h3>
+                    <p>Receive tailored diet, lifestyle, and potential supplement suggestions based on your results.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="icon">[ICON: Microscope]</div>
+                    <h3>Science-Backed & Cutting-Edge</h3>
+                    <p>Our tests are developed by leading scientists and analyzed using the latest DNA sequencing technology in our CLIA-certified lab.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="icon">[ICON: Home]</div>
+                    <h3>Non-Invasive & Convenient</h3>
+                    <p>Easy at-home sample collection means no doctor's visits or uncomfortable procedures.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="icon">[ICON: Shield]</div>
+                    <h3>Proactive & Preventative</h3>
+                    <p>Identify potential imbalances before they lead to more significant health issues. Take proactive steps.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. What You'll Discover -->
+    <section class="discover-section">
+        <div class="container">
+            <h2>Uncover Key Insights About Your:</h2>
+            <ul>
+                <li><strong>Digestive Efficiency:</strong> How well you're breaking down food and absorbing nutrients.</li>
+                <li><strong>Inflammation Levels:</strong> Microbial markers linked to gut inflammation.</li>
+                <li><strong>Immune System Support:</strong> Bacteria crucial for a robust immune response.</li>
+                <li><strong>Metabolic Health:</strong> Microbes influencing weight management and energy.</li>
+                <li><strong>Gut-Brain Axis:</strong> Connections between gut bacteria and mood/cognition.</li>
+                <li><strong>Diversity & Balance:</strong> The richness and stability of your microbial community.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 7. Our Test(s) Section -->
+    <section id="tests" class="tests-section">
+        <div class="container">
+            <h2>Choose the Right Test for You</h2>
+            <div class="tests-container">
+                <div class="test-card">
+                    <h3>Comprehensive Gut Health Analysis</h3>
+                    <p>Our test, provides a deep dive into your gut microbiome, identifying key bacteria, potential imbalances, and personalized recommendations.</p>
+                    <strong>Key Features:</strong>
+                    <ul>
+                        <li>Measures 1000+ species</li>
+                        <li>Pathogen screening</li>
+                        <li>Probiotic analysis</li>
+                        <li>Personalized food list</li>
+                    </ul>
+                    <p class="price">$[Price]</p>
+                    <a href="#" class="button">Order Comprehensive Test</a>
+                </div>
+                <!-- Add more test cards if needed -->
+                <!--
+                <div class="test-card">
+                    <h3>[Specific Focus Test]</h3>
+                    <p>Description of another test...</p>
+                    <strong>Key Features:</strong>
+                    <ul>
+                        <li>Feature 1</li>
+                        <li>Feature 2</li>
+                    </ul>
+                    <p class="price">$[Price]</p>
+                    <a href="#" class="button">Order This Test</a>
+                </div>
+                -->
+            </div>
+        </div>
+    </section>
+  
+
+    <!-- 9. Final Call to Action Section -->
+    <section class="final-cta-section">
+        <div class="container">
+            <h2>Ready to Take Control of Your Health From the Inside Out?</h2>
+            <p>Your journey to optimal wellness begins with understanding your unique microbiome. Get the answers you've been searching for.</p>
+            <a href="#tests" class="button">Order Your Test Kit Today</a>
+            <p style="margin-top: 15px;"><a href="#faq" class="button-secondary">Have Questions? Read Our FAQ</a></p>
+        </div>
+    </section>
+
+    <!-- 10. Email Opt-In -->
+    <section class="newsletter-section">
+        <div class="container">
+            <h2>Stay Updated on Microbiome Science & Special Offers</h2>
+            <p>Sign up for our newsletter to receive the latest research, health tips, and exclusive discounts.</p>
+            <form action="https://forms.gle/asQ6pVLnQXRE6jz2A" method="post" target="_blank">
+                <input type="email" name="EMAIL" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 11. Footer -->
+    <footer>
+        <div class="container">
+            <p>© <script>document.write(new Date().getFullYear())</script> GutsmartDx. All Rights Reserved.</p>
+            <p>
+                <a href="#privacy">Privacy Policy</a> |
+                <a href="#terms">Terms of Service</a> |
+                <a href="#contact">Contact Us</a> |
+                <a id="faq" href="#faq-page">FAQ</a> <!-- Link to a more detailed FAQ page if you have one -->
+            </p>
+            <div class="social-links">
+                <!-- Replace # with your actual social media links -->
+                <a href="#" title="Facebook">[FB_ICON]</a>
+                <a href="#" title="Instagram">[IG_ICON]</a>
+                <a href="#" title="LinkedIn">[LI_ICON]</a>
+            </div>
+            <p style="font-size: 0.8em; margin-top: 20px; color: #bdc3c7;">
+                <em>Disclaimer: Our tests are not intended to diagnose, treat, cure, or prevent any disease. Consult with a healthcare professional for medical advice.</em>
+            </p>
+        </div>
+    </footer>
+
 </body>
 </html>
